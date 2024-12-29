@@ -1,0 +1,34 @@
+
+### pulishProductByShop
+
+POST http://localhost:3000/v1/api/checkout/review
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE5OTI3NDYzLCJleHAiOjE3MjAxMDAyNjN9.prywbU2pgNCHvLhr_uzjCLdJ1odChPJ4_tgcql5YpPU_jK7JeD6Tszm0dzC28OC3my3zlryzr100CGbiAO2tZSqK9_7GyBy2WhjXEtX5GLItKLLVXQ1OiBbwFzFQrSVS3hYAUDBXXoTMvVxsS-xeEcoy_CJPSbIwFR67tfMewiX3DipKX68j9reD6bc-2tOI1WmlKIrcwOhMFuU-zrWuB1tXxuF5tZGcJGTCWu8ErDmVs2yKdGJZKE_rKfhNzRgmQtn8MZHSDUXX-Cj0D_kFji1rrkYLTRP4rGy9XFNSSLGV8DeUdRS79BkGBYWfGC5U-APss1JOUkdeIKST6Hzv5g
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+{
+    "cartId":"666ef176e2b9ed17bfde5263",
+    "userId": "123",
+    "shop_order_ids": [
+        {
+            "shopId":"662fb0bc1f812ca0a80a8320",
+            "shop_discounts": [
+                {
+                    "shopId":"662fb0bc1f812ca0a80a8320",
+                    "discountId":"666e9270ffa3f1a42e6fbcb7",
+                    "codeId":"SUMMER30"
+                }
+            ],
+            "item_products": [
+                {
+                    "productId":"66840374ad391519e518ed1e",
+                    "quantity":19,
+                    "price":111
+                }
+            ]
+        }
+             
+    ]
+
+}

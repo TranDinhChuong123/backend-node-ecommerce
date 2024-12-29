@@ -1,0 +1,65 @@
+
+### addToCart
+
+POST  http://localhost:3000/v1/api/cart
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE4NTIxMjY2LCJleHAiOjE3MTg2OTQwNjZ9.WY8PhvxtVaFlotjDOlfBkBL7wqAWqoZItD-noSVlPleVP-obIeyOVaa3MdpHPAR_ofFWrsb4sWu9boS06biQPb846OisCGKT0EmMQprsn10hZeac7BCoCL2fkWjjhcfSMIuOYlBnp4G14E0gN76P1WnJk3xphxBzy-WGWzXvsPx2AVEbQbcRuz_1HUpP3dS_2jvWRHtyL8LVc4mL30hMB1JAaolBvUdMMuwF31repiLhf37Q2bP8qo6O6K79hIF7lKiZ5UVNgW0gS4xgyJSxJdxryHTViwM3QJMXi6qrJNOEoPPnsKDErUrh7NxCrP7__xATtwqjzN0wbDxTlEdGMQ
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+{
+    "userId": 1001,
+    "product": {
+        "productId":"66646aff788d20b7a5b6021f",
+        "shopId":"662fb0bc1f812ca0a80a8320",
+        "quantity":4,
+        "name":"Com bo 2 ao thun cotton Compact Preium tre trun",
+        "price":111
+    }   
+}
+
+
+### delete to cart Item
+
+DELETE http://localhost:3000/v1/api/cart
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE4NTIxMjY2LCJleHAiOjE3MTg2OTQwNjZ9.WY8PhvxtVaFlotjDOlfBkBL7wqAWqoZItD-noSVlPleVP-obIeyOVaa3MdpHPAR_ofFWrsb4sWu9boS06biQPb846OisCGKT0EmMQprsn10hZeac7BCoCL2fkWjjhcfSMIuOYlBnp4G14E0gN76P1WnJk3xphxBzy-WGWzXvsPx2AVEbQbcRuz_1HUpP3dS_2jvWRHtyL8LVc4mL30hMB1JAaolBvUdMMuwF31repiLhf37Q2bP8qo6O6K79hIF7lKiZ5UVNgW0gS4xgyJSxJdxryHTViwM3QJMXi6qrJNOEoPPnsKDErUrh7NxCrP7__xATtwqjzN0wbDxTlEdGMQ
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+{
+    "userId": 1001,
+    "productId":"66646aff788d20b7a5b6021f"
+}
+
+### update
+
+POST  http://localhost:3000/v1/api/cart/update
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE4NTIxMjY2LCJleHAiOjE3MTg2OTQwNjZ9.WY8PhvxtVaFlotjDOlfBkBL7wqAWqoZItD-noSVlPleVP-obIeyOVaa3MdpHPAR_ofFWrsb4sWu9boS06biQPb846OisCGKT0EmMQprsn10hZeac7BCoCL2fkWjjhcfSMIuOYlBnp4G14E0gN76P1WnJk3xphxBzy-WGWzXvsPx2AVEbQbcRuz_1HUpP3dS_2jvWRHtyL8LVc4mL30hMB1JAaolBvUdMMuwF31repiLhf37Q2bP8qo6O6K79hIF7lKiZ5UVNgW0gS4xgyJSxJdxryHTViwM3QJMXi6qrJNOEoPPnsKDErUrh7NxCrP7__xATtwqjzN0wbDxTlEdGMQ
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+
+{
+    "userId": 1001,
+    "shop_order_ids": [
+        {
+            "shopId":"662fb0bc1f812ca0a80a8320",
+            "item_products": [
+                {
+                    "productId":"66646aff788d20b7a5b6021f",
+                    "shopId":"662fb0bc1f812ca0a80a8320",
+                    "quantity":19,
+                    "old_quantity":2,
+                    "name":"Com bo 2 ao thun cotton Compact Preium tre trun",
+                    "price":111
+                }
+            ],
+            "version": 2000
+        }     
+    ]
+}
+
+
+

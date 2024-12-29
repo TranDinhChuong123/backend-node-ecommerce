@@ -1,0 +1,38 @@
+
+### signUp
+
+POST http://localhost:3000/v1/api/access/shop/signUp
+Content-Type: application/json
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+
+{
+    "name" : "trandinhchuong",
+    "email" : "chuonggoodboy@gmail.com",
+    "password": "819852"
+}
+
+
+
+### signIn
+
+POST http://localhost:3000/v1/api/access/shop/signIn
+Content-Type: application/json
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+
+{
+    "email" : "chuonggoodboy@gmail.com",
+    "password": "819852"
+}
+
+
+### logOut
+
+POST http://localhost:3000/v1/api/access/shop/logOut
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE0NDQyODY3LCJleHAiOjE3MTQ2MTU2Njd9.Ln_wiB4ck2QtcIFbjAMqUrCzEl1wfZ0Kd7w-DbZBrkgqJNjdoif5QvlZYRZG721uAgk0YiDzQUlWiOuCJN53MTXYKxGL_3I-oHqSPkpGRnsN0abSau68eh-JReNMTYiVsBImg3LNC7C_WH9apmS9euF4EnZBnRQNzG_jY4Hf3dH8qhEjOMfW5SFD9EUkWqF0si_c2zl-o5TPNDnxpKrJtRvUSjMuN0tFN9Q7CiFcOdboQp3OcbGlKL2FALnAgc4XUPSi8rUkKGpUwp5fzS2jYNC3A6MfZ3waQK4k06b1araaHavucpMacANoq5OTFHIQnkjIs8NHrdT--1FbmT0VLQ
+
+
+
+
+

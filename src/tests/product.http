@@ -1,0 +1,130 @@
+
+### createProduct
+
+POST http://localhost:3000/v1/api/product/createProduct
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE5OTI3NDYzLCJleHAiOjE3MjAxMDAyNjN9.prywbU2pgNCHvLhr_uzjCLdJ1odChPJ4_tgcql5YpPU_jK7JeD6Tszm0dzC28OC3my3zlryzr100CGbiAO2tZSqK9_7GyBy2WhjXEtX5GLItKLLVXQ1OiBbwFzFQrSVS3hYAUDBXXoTMvVxsS-xeEcoy_CJPSbIwFR67tfMewiX3DipKX68j9reD6bc-2tOI1WmlKIrcwOhMFuU-zrWuB1tXxuF5tZGcJGTCWu8ErDmVs2yKdGJZKE_rKfhNzRgmQtn8MZHSDUXX-Cj0D_kFji1rrkYLTRP4rGy9XFNSSLGV8DeUdRS79BkGBYWfGC5U-APss1JOUkdeIKST6Hzv5g
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+{
+    "product_name": "iPhone 14 Pro",
+    "product_thumb": "https://example.com/images/smartphone3.jpg",
+    "product_description": "A high-quality smartphone with advanced features.",
+    "product_category": "Smartphones",
+    "product_price": 1000,
+    "discount_price": 900,
+    "product_tags": ["smartphone", "Apple", "iPhone"],
+    "product_slug": "iphone-14-pro",
+    "product_quantity": 200,
+    "product_attributes": {
+        "brand": "Apple",
+        "model": "iPhone 14"
+    },
+    "product_ratingsAverage": 4.5,
+    "product_variations": [
+        {
+            "product_sku": "APL-IP14-64GB-BLK",
+            "variation_name": "64GB",
+            "variation_attributes": {
+                "color": "black",
+                "price": 450,
+                "stock": 50,
+                "reviews": [
+                    {
+                        "rating": 4,
+                        "comment": "Good value for money."
+                    }              
+                ],
+                "images": [
+                    "https://example.com/images/smartphone3.jpg",
+                    "https://example.com/images/smartphone4.jpg"
+                ]
+
+            }
+        }
+        
+    ],
+    "metadata": {
+        "warranty": "12 months",
+        "supplier": "Apple Inc."
+    },
+    "isPublished": true,
+    "isDraft": false,
+    }
+}
+
+
+### updateProduct
+
+PATCH  http://localhost:3000/v1/api/product/update/66646aff788d20b7a5b6021f
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE3OTg2MjY4LCJleHAiOjE3MTgxNTkwNjh9.oTk1IYWNpKyJTf3qzaKKCnYbh-hDKmlKjpyrjowUjS6PArBLTy_8M8KRq5q2j-RebTbrkJUzLost0o9orfSVWTq97Zq9JnkWUJY5f3exVw9-sIOql8zPS7o_4dRKCXT22BM-cD-W72xPnf0sqlY10hv95zFOfPmkTKdKuZGrfYEu5ejwi-LeP_JeFzevfJY9acN73ex7TddD8Lx1Ite4EQB8qLSFu1mEJFLAkKabaNhD6T5MsavnFudih0WCqh8ZNp9s3iTzNoFpvF7AszPSt22KJPKNzoM-Ecq5swo28jO0ndtAhkcTI9cyLRfypE1yQGyFTSL6n5SODP1CwGeeDQ
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+{
+    "product_name": "Smartphone XYZ",
+    "product_type": "Electronics",
+    "product_attributes": {
+        "color": "red123"
+    }
+}
+
+### getAllProductDraftsForShop
+
+GET http://localhost:3000/v1/api/product/drafts/all
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE4NDQ3NTM1LCJleHAiOjE3MTg2MjAzMzV9.qMG0kxCj6JDo_cXMzAZIF7HRVbXj0FgYxzGn0I0QCEZeawljL9aeueCbVx1skUAHL9oyh3M8nuiS-DzyHuFEOlIAOq6NdaYgS2XWUv79UOosVoAB9LG-DuviLvItqCoRZ3PaKEG-jLbt1R26CsiIjJvBIlpi3xAybGiyM8daPDGnkJiyGqvuspjkNqNqMQQHe6VzRAbS7Ii6LYInQ4hieq1BQslAIgDk6fHLMN0iL7p5slwYhwSBjah7jJDuu5Ww7V37vt_vND_eY18G5bwEm1H4GbIwKcEfjv5rY2IP09baDDtLFaiYM6Hnjd0xf7UL9iNBro5UuQs5YG1Ef889gg
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+
+
+### pulishProductByShop
+POST http://localhost:3000/v1/api/product/publish/66840374ad391519e518ed1e
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE5OTI3NDYzLCJleHAiOjE3MjAxMDAyNjN9.prywbU2pgNCHvLhr_uzjCLdJ1odChPJ4_tgcql5YpPU_jK7JeD6Tszm0dzC28OC3my3zlryzr100CGbiAO2tZSqK9_7GyBy2WhjXEtX5GLItKLLVXQ1OiBbwFzFQrSVS3hYAUDBXXoTMvVxsS-xeEcoy_CJPSbIwFR67tfMewiX3DipKX68j9reD6bc-2tOI1WmlKIrcwOhMFuU-zrWuB1tXxuF5tZGcJGTCWu8ErDmVs2yKdGJZKE_rKfhNzRgmQtn8MZHSDUXX-Cj0D_kFji1rrkYLTRP4rGy9XFNSSLGV8DeUdRS79BkGBYWfGC5U-APss1JOUkdeIKST6Hzv5g
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+### unPulishProductByShop
+POST http://localhost:3000/v1/api/product/unpublish/665ddd4de0c3385c860ba9cb
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE3NzMzMDIzLCJleHAiOjE3MTc5MDU4MjN9.Q_8M64TQnmQVV1m40wImrh1BDpA3C9Aeq0ytvvsbzvIfK5T5AQG1QoOQehbACMQhdc7WcFjZWjdtJY6i-Hz9hkv6Er0ndUsuTqtg7FyvFIpLMXDU6jaaVxOj2Dif1dcIOaAXuvDohAFJjcN_KnVPGmXFnOhNIZ0gJ2D6fTC6fRr-C_y3Gcyt2ky-ArQjexRfkiyrUoi5z4rtzy5lxr6QbEnae97Oas6J9YXEHdlVULbOdjIjmTGJ_jOUjGScHu6iJXyZ_44mCBA_DAyBFYxMnDehr4YWK28ZBj-aph5YiLoiHUW-jo6Pgc7EDn4TeGDcifQG9O3qx3e1mZZZ_Pg5Ng
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+
+
+### getAllProductPublishedForShop
+
+GET http://localhost:3000/v1/api/product/published/all
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE3OTg2MjY4LCJleHAiOjE3MTgxNTkwNjh9.oTk1IYWNpKyJTf3qzaKKCnYbh-hDKmlKjpyrjowUjS6PArBLTy_8M8KRq5q2j-RebTbrkJUzLost0o9orfSVWTq97Zq9JnkWUJY5f3exVw9-sIOql8zPS7o_4dRKCXT22BM-cD-W72xPnf0sqlY10hv95zFOfPmkTKdKuZGrfYEu5ejwi-LeP_JeFzevfJY9acN73ex7TddD8Lx1Ite4EQB8qLSFu1mEJFLAkKabaNhD6T5MsavnFudih0WCqh8ZNp9s3iTzNoFpvF7AszPSt22KJPKNzoM-Ecq5swo28jO0ndtAhkcTI9cyLRfypE1yQGyFTSL6n5SODP1CwGeeDQ
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+
+### getListSearchProductByUser
+
+GET http://localhost:3000/v1/api/product/search/XYZ
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+
+### getAllProducts was published
+
+GET http://localhost:3000/v1/api/product
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+
+
+
+### getProduct
+
+GET http://localhost:3000/v1/api/product/665ddd4de0c3385c860ba9cb
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json

@@ -1,0 +1,65 @@
+
+### updateProduct
+
+POST  http://localhost:3000/v1/api/discount/create
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE4NTIxMjY2LCJleHAiOjE3MTg2OTQwNjZ9.WY8PhvxtVaFlotjDOlfBkBL7wqAWqoZItD-noSVlPleVP-obIeyOVaa3MdpHPAR_ofFWrsb4sWu9boS06biQPb846OisCGKT0EmMQprsn10hZeac7BCoCL2fkWjjhcfSMIuOYlBnp4G14E0gN76P1WnJk3xphxBzy-WGWzXvsPx2AVEbQbcRuz_1HUpP3dS_2jvWRHtyL8LVc4mL30hMB1JAaolBvUdMMuwF31repiLhf37Q2bP8qo6O6K79hIF7lKiZ5UVNgW0gS4xgyJSxJdxryHTViwM3QJMXi6qrJNOEoPPnsKDErUrh7NxCrP7__xATtwqjzN0wbDxTlEdGMQ
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+{
+    "name": "Summer Sale",
+    "value": 20,
+    "description": "20% off on all summer items",
+    "type": "percentage",
+    "code": "SUMMER30",
+    "start_date": "2023-06-15T19:00:00Z",
+    "end_date": "2023-09-15T23:59:59Z",
+    "max_value": 50,
+    "max_uses": 100,
+    "uses_count": 0,
+    "user_used": [],
+    "max_per_user": 1,
+    "min_order_value": 50,
+    "shopId": "662fb0bc1f812ca0a80a8320",
+    "is_active": true,
+    "applies_to": "all",
+    "product_ids": ["66646aff788d20b7a5b6021f", "666d6dc3bcb008e3bc8f336c"]
+}
+
+
+
+### get all product code
+
+GET  http://localhost:3000/v1/api/discount/list_product_code?code=SUMMER30&shopId=662fb0bc1f812ca0a80a8320&limit=50&page=1
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+
+### get all product code
+
+GET http://localhost:3000/v1/api/discount/?shopId=662fb0bc1f812ca0a80a8320&limit=50&page=1
+
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+
+
+
+### get Discounts Amount
+
+POST http://localhost:3000/v1/api/discount/amount
+authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJmYjBiYzFmODEyY2EwYTgwYTgzMjAiLCJlbWFpbCI6ImNodW9uZ2dvb2Rib3lAZ21haWwuY29tIiwiaWF0IjoxNzE4NTIxMjY2LCJleHAiOjE3MTg2OTQwNjZ9.WY8PhvxtVaFlotjDOlfBkBL7wqAWqoZItD-noSVlPleVP-obIeyOVaa3MdpHPAR_ofFWrsb4sWu9boS06biQPb846OisCGKT0EmMQprsn10hZeac7BCoCL2fkWjjhcfSMIuOYlBnp4G14E0gN76P1WnJk3xphxBzy-WGWzXvsPx2AVEbQbcRuz_1HUpP3dS_2jvWRHtyL8LVc4mL30hMB1JAaolBvUdMMuwF31repiLhf37Q2bP8qo6O6K79hIF7lKiZ5UVNgW0gS4xgyJSxJdxryHTViwM3QJMXi6qrJNOEoPPnsKDErUrh7NxCrP7__xATtwqjzN0wbDxTlEdGMQ
+x-api-key: 0248fdeee2474ea85cb174a8d599403e05f0c4eb5ed35a201193aa687681b73efe2b5fa63df4abc12995676092f32a3e52c22adfe7ebd08b97b0939158d0726c
+x-client-id: 662fb0bc1f812ca0a80a8320
+Content-Type: application/json
+
+{
+    "shopId":"662fb0bc1f812ca0a80a8320",
+    "userId":2,
+    "code": "SUMMER30",
+    "products":[{
+        "productId": "66646aff788d20b7a5b6021f",
+        "quantity":5,
+        "price": 12000
+    }]
+}
+
