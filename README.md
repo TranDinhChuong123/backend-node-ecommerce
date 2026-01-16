@@ -31,93 +31,7 @@ Dự án hiện đang ở giai đoạn **MVP** (Minimum Viable Product) – phù
 - **Validation**: Joi hoặc Zod (khuyến nghị)
 - **Dev Tools**: nodemon, ESLint + Prettier
 
-## 📂 Cấu trúc thư mục (Project Structure)
-
-Hiện tại repo khá tối giản, bạn nên tổ chức lại theo chuẩn sau:
-backend-node-ecommerce/
-├── src/
-│   ├── config/             # db.js, jwt.js, cloudinary.js…
-│   ├── controllers/        # Xử lý logic request/response
-│   ├── middlewares/        # auth.js, error.js, validator.js…
-│   ├── models/             # User.js, Product.js, Order.js…
-│   ├── routes/             # auth.routes.js, product.routes.js…
-│   ├── services/           # Business logic (tách biệt)
-│   ├── utils/              # helpers, constants
-│   └── app.js              # Khởi tạo Express app
-├── .env.example
-├── .gitignore
-├── package.json
-├── server.js               # Entry point
-└── README.md
-text## 🚀 Hướng dẫn cài đặt & chạy (Step-by-Step – Copy-paste được luôn)
-
-### Yêu cầu trước khi bắt đầu
-
-- Node.js ≥ 18 (khuyến nghị dùng [nvm](https://github.com/nvm-sh/nvm))
-- MongoDB (local hoặc [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) miễn phí)
-- Git
-
-### Bước 1: Clone repository
-
-```bash
-git clone https://github.com/TranDinhChuong123/backend-node-ecommerce.git
-cd backend-node-ecommerce
-Bước 2: Cài đặt dependencies
-Bashnpm install
-# hoặc yarn
-# yarn install
-Bước 3: Tạo file .env
-Copy từ mẫu (nếu có .env.example) hoặc tạo mới:
-Bashcp .env.example .env    # nếu có file mẫu
-# hoặc tạo thủ công:
-touch .env
-Nội dung .env tối thiểu (thay đổi giá trị phù hợp):
-env# Server
-PORT=5000
-NODE_ENV=development
-
-# MongoDB
-MONGODB_URI=mongodb://127.0.0.1:27017/ecommerce_db
-# Hoặc Atlas: mongodb+srv://<user>:<pass>@cluster0.xxx.mongodb.net/ecommerce_db?retryWrites=true&w=majority
-
-# JWT
-JWT_SECRET=your_super_long_random_secret_key_1234567890_change_this_now
-JWT_EXPIRES_IN=1d
-REFRESH_TOKEN_EXPIRES_IN=7d
-
-# Optional - sau này thêm
-CLOUDINARY_CLOUD_NAME=xxx
-CLOUDINARY_API_KEY=xxx
-CLOUDINARY_API_SECRET=xxx
-Tạo JWT_SECRET mạnh (chạy lệnh này trong terminal):
-Bashopenssl rand -base64 48
-# Copy kết quả paste vào JWT_SECRET
-Lưu ý: KHÔNG commit file .env lên GitHub!
-Bước 4: Chạy server
-Chế độ phát triển (tự động reload khi sửa code – khuyến nghị):
-Bash# Nếu chưa có nodemon → cài
-npm install --save-dev nodemon
-
-# Chạy
-npm run dev
-# Nếu package.json chưa có script "dev", thêm vào:
-# "scripts": { "dev": "nodemon server.js" }
-Chế độ production:
-Bashnpm start
-# hoặc
-node server.js
-→ Server chạy tại: http://localhost:5000
-Bước 5: Kiểm tra server hoạt động
-Mở browser hoặc Postman:
-
-http://localhost:5000/ → mong đợi thấy "Server is running" hoặc JSON response (nếu đã config)
-http://localhost:5000/api/health (nếu bạn đã thêm route health check)
-
-📡 API Endpoints chính (dự kiến – cập nhật khi code xong)
-
-MethodEndpointMô tảAuth?RolePOST/api/auth/registerĐăng ký người dùngKhông—POST/api/auth/loginĐăng nhậpKhông—GET/api/auth/meThông tin user hiện tạiCóUserGET/api/productsDanh sách sản phẩm (phân trang)Không—POST/api/productsTạo sản phẩm mớiCóAdminGET/api/products/:idChi tiết sản phẩmKhông—POST/api/cart/addThêm vào giỏ hàngCóUserPOST/api/ordersTạo đơn hàngCóUserGET/api/orders/my-ordersLấy đơn hàng của tôiCóUser
-→ Khi code xong, nên thêm Swagger hoặc Postman collection để document chi tiết.
-🔒 Best Practices & Bảo mật (đã / nên áp dụng)
+##🔒 Best Practices & Bảo mật (đã / nên áp dụng)
 
 Hash mật khẩu bằng bcrypt (12+ rounds)
 JWT với thời hạn ngắn + Refresh Token
@@ -127,12 +41,37 @@ Validate input bằng Joi/Zod
 Centralized error handling
 Không lưu secret trong code
 
-🛤️ Roadmap (Hướng phát triển)
+### Yêu cầu trước khi bắt đầu
 
- Hoàn thiện authentication đầy đủ (register, login, refresh, forgot password)
- Thêm upload ảnh sản phẩm (multer + cloudinary)
- Tích hợp thanh toán Việt Nam (VNPay / Momo)
- Swagger / OpenAPI documentation
- Unit + Integration tests (Jest + Supertest)
- Docker + Docker Compose
- Deploy miễn phí (Render / Railway / Vercel)
+- Node.js ≥ 18 (khuyến nghị dùng [nvm](https://github.com/nvm-sh/nvm))
+- MongoDB (local hoặc [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) miễn phí)
+- Git
+
+#### Bước 1: Clone repository
+- git clone https://github.com/TranDinhChuong123/backend-node-ecommerce.git
+- cd backend-node-ecommerce
+#### Bước 2: Cài đặt dependencies
+- Bashnpm install
+- hoặc yarn
+- yarn install
+#### Bước 3: Tạo file .env
+
+Bước 4: Chạy server
+- npm run dev
+→ Server chạy tại: http://localhost:5000
+#### Bước 5: Kiểm tra server hoạt động
+- Mở browser hoặc Postman:
+- http://localhost:5000/ → mong đợi thấy "Server is running" hoặc JSON response (nếu đã config)
+- http://localhost:5000/api/health (nếu bạn đã thêm route health check)
+
+
+## 🛤️ Roadmap (Hướng phát triển)
+
+ - Hoàn thiện authentication đầy đủ (register, login, refresh, forgot password)
+ - Thêm upload ảnh sản phẩm (multer + cloudinary)
+ - Tích hợp thanh toán Việt Nam (VNPay / Momo)
+ - Swagger / OpenAPI documentation
+ - Unit + Integration tests (Jest + Supertest)
+ - Docker + Docker Compose
+ - Deploy miễn phí (Render / Railway / Vercel)
+
